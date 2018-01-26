@@ -14,9 +14,13 @@ namespace GraphDS
                 Tuple.Create(5,6), Tuple.Create(8,9), Tuple.Create(9,10)};
 
             var graph = new Graph<int>(vertices, edges);
-            var algo = new GraphDFS();
+            var dfs = new GraphDFS();
+            var bfs = new GraphBFS();
 
-            Console.WriteLine(string.Join(", ",algo.DFS(graph,1)));
+            Console.WriteLine("DFS");
+            Console.WriteLine(string.Join(", ",dfs.DFS(graph,1)));
+            Console.WriteLine("BFS");
+            Console.WriteLine(string.Join(", ", bfs.BFS(graph, 1)));
             Console.ReadKey();
 
         }
