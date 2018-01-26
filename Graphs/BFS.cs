@@ -2,10 +2,17 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace GraphDS
+namespace DataStructures.GraphDS
 {
     public class GraphBFS
     {
+        /// <summary>
+        /// Breadth First Search
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="graph"></param>
+        /// <param name="start"></param>
+        /// <returns></returns>
         public HashSet<T> BFS<T>(Graph<T> graph,T start)
         {
             var visited = new HashSet<T>();

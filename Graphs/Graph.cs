@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace GraphDS
+namespace DataStructures.GraphDS
 {
     public class Graph<T>
     {

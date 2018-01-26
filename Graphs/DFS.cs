@@ -1,9 +1,17 @@
 ﻿using System.Collections.Generic;
 
-namespace GraphDS
+namespace DataStructures.GraphDS
 {
     public class GraphDFS
     {
+    
+    /// <summary>
+    /// Depth First Search
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <param name="graph"></param>
+    /// <param name="start"></param>
+    /// <returns></returns>
         public HashSet<T> DFS<T>(Graph<T> graph, T start)
         {
             var visited = new HashSet<T>();

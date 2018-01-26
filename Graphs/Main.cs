@@ -1,6 +1,7 @@
-﻿using System;
+﻿using DataStructures.BST;
+using System;
 
-namespace GraphDS
+namespace DataStructures
 {
     public class MainProgram
     {
@@ -13,9 +14,9 @@ namespace GraphDS
                 Tuple.Create(4,7), Tuple.Create(5,7), Tuple.Create(5,8),
                 Tuple.Create(5,6), Tuple.Create(8,9), Tuple.Create(9,10)};
 
-            var graph = new Graph<int>(vertices, edges);
-            var dfs = new GraphDFS();
-            var bfs = new GraphBFS();
+            var graph = new GraphDS.Graph<int>(vertices, edges);
+            var dfs = new GraphDS.GraphDFS();
+            var bfs = new GraphDS.GraphBFS();
 
             Console.WriteLine("DFS");
             Console.WriteLine(string.Join(", ",dfs.DFS(graph,1)));
@@ -23,6 +24,16 @@ namespace GraphDS
             Console.WriteLine(string.Join(", ", bfs.BFS(graph, 1)));
             Console.ReadKey();
 
+            //***********************************************************************//
+
+            Node root = null;
+            Tree tree = new Tree();
+            int[] a = new int[100];
+            Random random = new Random();
+            for (int i = 0; i < 100; i++)
+            {
+                a[i] = random.Next(10);
+            }
         }
     }
 }
