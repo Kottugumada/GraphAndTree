@@ -16,12 +16,12 @@ namespace DataStructures.GraphDS
         {
             var visited = new HashSet<T>();
 
-            Stack<T> stack = new Stack<T>();
-            stack.Push(start);
+            Stack<T> searchStack = new Stack<T>();
+            searchStack.Push(start);
 
-            while (stack.Count > 0)
+            while (searchStack.Count > 0)
             {
-                var vertex = stack.Pop();
+                var vertex = searchStack.Pop();
 
                 if (visited.Contains(vertex))
                 {
@@ -34,7 +34,7 @@ namespace DataStructures.GraphDS
                 {
                     if (!visited.Contains(neighbor))
                     {
-                        stack.Push(neighbor);
+                        searchStack.Push(neighbor);
                     }
                 }
             }
