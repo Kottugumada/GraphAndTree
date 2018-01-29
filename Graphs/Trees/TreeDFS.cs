@@ -10,17 +10,22 @@ namespace DataStructures.Trees
             Stack<BST.Node> searchStack = new Stack<BST.Node>();
             searchStack.Push(rootNode);
 
-            while (searchStack.Count > 0)
+            while (rootNode != null || searchStack.Count > 0)
             {
+                if (rootNode != null)
+                {
+                    searchStack.Push(rootNode);
+                    rootNode = rootNode.Left;
+                }
                 var node = searchStack.Pop();
 
-                if (node.left !=null)
+                if (node.Left !=null)
                 {
-                    searchStack.Push(node.left);
+                    searchStack.Push(node.Left);
                 }
-                if (node.right != null)
+                if (node.Right != null)
                 {
-                    searchStack.Push(node.right);
+                    searchStack.Push(node.Right);
                 }
             }
         }

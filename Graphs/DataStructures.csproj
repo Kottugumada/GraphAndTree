@@ -5,4 +5,7 @@
     <TargetFramework>netcoreapp1.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Trees\TreeDFS.cs" />
+  </ItemGroup>
 </Project>

@@ -1,5 +1,8 @@
 ﻿using DataStructures.BST;
+using DataStructures.Trees;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace DataStructures
 {
@@ -22,18 +25,34 @@ namespace DataStructures
             Console.WriteLine(string.Join(", ",dfs.DFS(graph,1)));
             Console.WriteLine("BFS");
             Console.WriteLine(string.Join(", ", bfs.BFS(graph, 1)));
-            Console.ReadKey();
+            //Console.ReadKey();
 
             //***********************************************************************//
-
+            Console.WriteLine("BST Traversal");
             Node root = null;
             Tree tree = new Tree();
-            int[] a = new int[100];
-            Random random = new Random();
-            for (int i = 0; i < 100; i++)
+
+            Search search = new Search();
+            List<int> resultList = new List<int>();
+           
+            root = tree.BalanceTree(vertices.ToList(), 0, vertices.ToList().Count());
+
+            if (root != null)
             {
-                a[i] = random.Next(10);
+                Console.WriteLine("InOrder");
+                search.InOrder(root);
+                Console.WriteLine("PreOrder");
+                search.PreOrder(root);
+                Console.WriteLine("PostOrder");
+                search.PostOrder(root);
             }
+            else
+            {
+                // root is null
+                // display to the user
+            }
+         
+            Console.ReadKey();
         }
     }
 }

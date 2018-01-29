@@ -7,8 +7,8 @@ namespace DataStructures.BST
     public class Node
     {
         public int value;
-        public Node left;
-        public Node right;
+        public Node Left;
+        public Node Right;
     }
     public class Tree
     {
@@ -27,15 +27,30 @@ namespace DataStructures.BST
             }
             else if (data < root.value)
             {
-                root.left = Insert(root.left,data);
+                root.Left = Insert(root.Left,data);
             }
             else
             {
-                root.right = Insert(root.right, data);
+                root.Right = Insert(root.Right, data);
             }
             return root;
         }
 
+        public Node BalanceTree(IList<int> values, int min, int max)
+        {
+            if (min == max)
+            {
+                return null;
+            }
+            int median = min + (max - min) / 2;
+            return new Node
+            {
+                Left = BalanceTree(values, min, median),
+                Right = BalanceTree(values, median + 1, max),
+                value = values[median]
+            };
+
+        }
         /// <summary>
         /// Traverse through nodes
         /// </summary>
@@ -46,8 +61,8 @@ namespace DataStructures.BST
             {
                 return;
             }
-            Traverse(root.left);
-            Traverse(root.right);
+            Traverse(root.Left);
+            Traverse(root.Right);
         }
     }
 }
