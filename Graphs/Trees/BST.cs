@@ -12,30 +12,14 @@ namespace DataStructures.BST
     }
     public class Tree
     {
-        /// <summary>
-        /// Insert data
-        /// </summary>
-        /// <param name="root"></param>
-        /// <param name="data"></param>
-        /// <returns></returns>
-        public Node Insert(Node root,int data)
-        {
-            if (root == null)
-            {
-                root = new Node();
-                root.value = data;
-            }
-            else if (data < root.value)
-            {
-                root.Left = Insert(root.Left,data);
-            }
-            else
-            {
-                root.Right = Insert(root.Right, data);
-            }
-            return root;
-        }
 
+        /// <summary>
+        /// Balance a tree
+        /// </summary>
+        /// <param name="values"></param>
+        /// <param name="min"></param>
+        /// <param name="max"></param>
+        /// <returns></returns>
         public Node BalanceTree(IList<int> values, int min, int max)
         {
             if (min == max)
