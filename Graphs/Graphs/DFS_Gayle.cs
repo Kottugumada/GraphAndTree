@@ -45,20 +45,4 @@ namespace DataStructures.Graphs
             }
                 return false;
         }
-
-        public  class LinkedList<T>
-        {
-            T val;
-            LinkedList<T> next;
-
-            public LinkedList()
-            {
-            }
-
-            public LinkedList(T p)
-            {
-                val = p;
-            }
-        }
-    }
-}
+    
