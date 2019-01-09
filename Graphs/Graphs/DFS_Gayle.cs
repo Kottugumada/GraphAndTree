@@ -29,7 +29,21 @@ namespace DataStructures.Graphs
 
         private bool HasDFSPath(Node s, Node d, HashSet<int> visited)
         {
-            throw new NotImplementedException();
+            if(visited.Contains(source.id)) return false;
+            visited.Add(source.id);
+
+            if (source == destination)
+            {
+                return true;
+            }
+            foreach (Node child in source.Adjacent)
+            {
+                if (HasDFSPath(child, destination, visited))
+                {
+                    return true;
+                }
+            }
+                return false;
         }
 
         public  class LinkedList<T>
