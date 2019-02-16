@@ -1,4 +1,5 @@
  // Definition for a binary tree node.
+  // Time and Space Complexity O(n)
  public class TreeNode {
      public int val;
      public TreeNode left;
@@ -15,11 +16,11 @@ public class Solution {
         while(curr != null || st.Any()){
             if(curr != null){
             st.Push(curr);
+            res.Add(curr.val);
             curr = curr.left;
             }
             else{
                 curr = st.Pop();
-                res.Add(curr.val);
                 curr = curr.right;
             }
         }

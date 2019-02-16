@@ -1,4 +1,5 @@
  // Definition for a binary tree node.
+ // Time and Space Complexity O(n)
  public class TreeNode {
      public int val;
      public TreeNode left;
