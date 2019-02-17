@@ -1,11 +1,16 @@
+using System;
+using System.Collections.Generic;
+
+namespace BST{
 public class TreeNode{
-    TreeNode left;
-    TreeNode right;
-    int val;
+    public TreeNode left;
+    public TreeNode right;
+    public int val;
     public TreeNode(int data){
         val = data;
     }
 }
+public class Solution_MaxDepthInBST{
 public int MaxDepthInBST(TreeNode root){
    Queue<TreeNode> q = new Queue<TreeNode>();
     int count = 0;
@@ -14,8 +19,8 @@ public int MaxDepthInBST(TreeNode root){
     if(root.left == null && root.right == null) return 1;
 
     q.Enqueue(root);
-    while(q.Any()){
-        int size = q.Count();
+    while(q.Count >0){
+        int size = q.Count;
         while(size > 0){
             TreeNode node = q.Dequeue();
             if(node.left != null){
@@ -29,4 +34,6 @@ public int MaxDepthInBST(TreeNode root){
         count++;
     }
     return count;
+}
+}
 }

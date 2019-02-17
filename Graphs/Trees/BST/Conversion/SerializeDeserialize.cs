@@ -1,13 +1,18 @@
-public class TreeNode{
-    public TreeNode left;
-    public TreeNode right;
-    public int val;
-    public TreeNode(int data){
-        val = data;
-    }
-}
+// public class TreeNode{
+//     public TreeNode left;
+//     public TreeNode right;
+//     public int val;
+//     public TreeNode(int data){
+//         val = data;
+//     }
+// }
+using System;
+using System.Linq;
+using System.Text;
+using System.Collections.Generic;
 
-public class Codec {
+namespace BST {
+public class Solution_Codec {
 
     // Encodes a tree to a single string.
     public string serialize(TreeNode root) {
@@ -64,7 +69,7 @@ public class Codec {
         return root;
     }
 }
-
+}
 // Your Codec object will be instantiated and called as such:
 // Codec codec = new Codec();
 // codec.deserialize(codec.serialize(root));

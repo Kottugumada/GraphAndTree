@@ -8,8 +8,8 @@ namespace DataStructures.Graphs
     {
         public  class Node
         {
-            private int id;
-            LinkedList<Node> adjacent = new LinkedList<Node>();
+            public int id;
+            public LinkedList<Node> adjacent = new LinkedList<Node>();
             public Node(int id)
             {
                 this.id = id;
@@ -27,7 +27,7 @@ namespace DataStructures.Graphs
             return HasDFSPath(s, d, visited);
         }
 
-        private bool HasDFSPath(Node s, Node d, HashSet<int> visited)
+        private bool HasDFSPath(Node source, Node destination, HashSet<int> visited)
         {
             if(visited.Contains(source.id)) return false;
             visited.Add(source.id);
@@ -36,7 +36,7 @@ namespace DataStructures.Graphs
             {
                 return true;
             }
-            foreach (Node child in source.Adjacent)
+            foreach (Node child in source.adjacent)
             {
                 if (HasDFSPath(child, destination, visited))
                 {

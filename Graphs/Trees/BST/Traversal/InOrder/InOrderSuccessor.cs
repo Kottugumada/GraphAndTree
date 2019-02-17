@@ -1,12 +1,18 @@
  // Definition for a binary tree node.
   // Time and Space Complexity O(n)
- public class TreeNode {
-     public int val;
-     public TreeNode left;
-     public TreeNode right;
-     public TreeNode(int x) { val = x; }
- }
-public class Solution {
+//  public class TreeNode {
+//      public int val;
+//      public TreeNode left;
+//      public TreeNode right;
+//      public TreeNode(int x) { val = x; }
+//  }
+using System;
+using System.Linq;
+using System.Text;
+using System.Collections.Generic;
+
+namespace BST {
+public class Solution_InorderSuccessor {
     public TreeNode InorderSuccessor(TreeNode root, TreeNode p) {
         Stack<TreeNode> st = new Stack<TreeNode>();
         TreeNode pre = null;
@@ -27,4 +33,5 @@ public class Solution {
         }
         return null;
     }
+}
 }
