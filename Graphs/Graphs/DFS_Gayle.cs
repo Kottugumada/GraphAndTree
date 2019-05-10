@@ -6,7 +6,7 @@ namespace DataStructures.Graphs
 {
     public class DFS_Gayle
     {
-        public  class Node
+        public class Node
         {
             public int id;
             public LinkedList<Node> adjacent = new LinkedList<Node>();
@@ -29,7 +29,7 @@ namespace DataStructures.Graphs
 
         private bool HasDFSPath(Node source, Node destination, HashSet<int> visited)
         {
-            if(visited.Contains(source.id)) return false;
+            if (visited.Contains(source.id)) return false;
             visited.Add(source.id);
 
             if (source == destination)
@@ -43,6 +43,8 @@ namespace DataStructures.Graphs
                     return true;
                 }
             }
-                return false;
+            return false;
         }
+    }
+}
     

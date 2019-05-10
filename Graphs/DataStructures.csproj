@@ -8,8 +8,4 @@
   <ItemGroup>
     <Compile Remove="Trees\TreeDFS.cs" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Heaps\" />
-  </ItemGroup>
 </Project>
