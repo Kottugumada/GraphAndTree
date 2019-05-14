@@ -22,8 +22,8 @@ namespace DataStructures.Graphs
         {
             if (AdjacencyList.ContainsKey(edge.Item1) && AdjacencyList.ContainsKey(edge.Item2))
             {
-                AdjacencyList[edge.Item1].Add(edge.Item1);
-                AdjacencyList[edge.Item2].Add(edge.Item2);
+                AdjacencyList[edge.Item1].Add(edge.Item2);
+                AdjacencyList[edge.Item2].Add(edge.Item1);
             }
         }
 
