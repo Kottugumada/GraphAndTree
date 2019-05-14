@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DataStructures.Trees
+namespace DataStructures.BST
 {
     public class Search
     {
