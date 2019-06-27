@@ -35,5 +35,9 @@ public int MaxDepthInBST(TreeNode root){
     }
     return count;
 }
+public int MaxDepthInBST_Recursive(TreeNode root){
+    if(root == null) return 0;
+    return Math.Max(MaxDepthInBST_Recursive(root.left), MaxDepthInBST_Recursive(root.right)) + 1;
+    }
 }
 }
