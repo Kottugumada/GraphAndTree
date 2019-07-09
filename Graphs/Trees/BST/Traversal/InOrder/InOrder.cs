@@ -12,7 +12,7 @@ using System.Text;
 using System.Collections.Generic;
 
 namespace BST {
-public class Solution {
+public class InOrderSolution {
     public IList<int> InOrderTraversal(TreeNode root) {
         IList<int> res = new List<int>();
         if(root == null) return res;

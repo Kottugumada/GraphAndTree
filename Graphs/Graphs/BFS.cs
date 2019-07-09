@@ -40,9 +40,6 @@ namespace DataStructures.GraphDS
                 }
             }
             return visited;
-            {
-
-            }
         }
     }
 }
