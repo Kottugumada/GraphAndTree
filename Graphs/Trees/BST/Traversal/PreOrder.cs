@@ -1,12 +1,11 @@
- // Definition for a binary tree node.
-  // Time and Space Complexity O(n)
+// Definition for a binary tree node.
+// Time and Space Complexity O(n)
 //  public class TreeNode {
 //      public int val;
 //      public TreeNode left;
 //      public TreeNode right;
 //      public TreeNode(int x) { val = x; }
 //  }
-using System;
 using System.Linq;
 using System.Collections.Generic;
 public class Solution_PreOrderTraversal {

@@ -5,10 +5,6 @@ namespace DataStructures.GraphDS
 {
     public class Graph<T>
     {
-        public Graph()
-        {
-
-        }
         public Graph(IEnumerable<T> vertices,IEnumerable<Tuple<T,T>> edges) {
 
             foreach (var vertex in vertices)
@@ -20,6 +16,7 @@ namespace DataStructures.GraphDS
                 AddEdge(edge);
             }
         }
+
         public Dictionary<T, HashSet<T>> AdjacencyList { get; } = new Dictionary<T, HashSet<T>>();
         public void AddVertex(T vertex)
         {

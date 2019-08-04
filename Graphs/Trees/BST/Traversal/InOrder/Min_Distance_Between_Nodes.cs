@@ -1,18 +1,19 @@
- // Definition for a binary tree node.
-  // Time and Space Complexity O(n)
+// Definition for a binary tree node.
+// Time and Space Complexity O(n)
 //  public class TreeNode {
 //      public int val;
 //      public TreeNode left;
 //      public TreeNode right;
 //      public TreeNode(int x) { val = x; }
 //  }
+// https://leetcode.com/problems/minimum-distance-between-bst-nodes/
 using System;
 using System.Linq;
-using System.Text;
 using System.Collections.Generic;
 
-namespace BST {
-public class Solution_MinDiffInBST {
+namespace BST
+{
+    public class Solution_MinDiffInBST {
     public int MinDiffInBST(TreeNode root) {
     Stack<TreeNode> st = new Stack<TreeNode>();
     int minDiff = Int32.MaxValue;

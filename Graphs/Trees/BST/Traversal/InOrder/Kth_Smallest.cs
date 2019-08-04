@@ -1,5 +1,5 @@
- // Definition for a binary tree node.
-  // Time and Space Complexity O(n)
+// Definition for a binary tree node.
+// Time and Space Complexity O(n)
 //  public class TreeNode {
 //      public int val;
 //      public TreeNode left;
@@ -8,11 +8,11 @@
 //  }
 using System;
 using System.Linq;
-using System.Text;
 using System.Collections.Generic;
 
-namespace BST {
-public class Solution_KthSmallest {
+namespace BST
+{
+    public class Solution_KthSmallest {
     public int KthSmallest(TreeNode root, int k) {
         int count = 0;
         if(root == null) return count;

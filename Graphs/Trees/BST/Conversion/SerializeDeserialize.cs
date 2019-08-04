@@ -14,8 +14,9 @@ using System.Collections.Generic;
 namespace BST {
 public class Solution_Codec {
 
-    // Encodes a tree to a single string.
-    public string serialize(TreeNode root) {
+        // Encodes a tree to a single string.
+        // https://leetcode.com/problems/serialize-and-deserialize-bst/
+        public string serialize(TreeNode root) {
         Stack<TreeNode> st = new Stack<TreeNode>();
         StringBuilder sb = new StringBuilder();
         while(root != null || st.Any()){

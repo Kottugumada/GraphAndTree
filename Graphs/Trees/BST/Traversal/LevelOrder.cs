@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace DataStructures.Trees.BST.Traversal
 {
-   public class LevelOrder
+    public class LevelOrder
     {
         public IList<IList<int>> LevelOrderTraversal(TreeNode root)
         {
