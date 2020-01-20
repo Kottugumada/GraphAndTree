@@ -1,3 +1,4 @@
+// https://leetcode.com/problems/validate-binary-search-tree/
 // Definition for a binary tree node.
 // Time and Space Complexity O(n)
 //  public class TreeNode {
@@ -6,6 +7,7 @@
 //      public TreeNode right;
 //      public TreeNode(int x) { val = x; }
 //  }
+
 using System.Collections.Generic;
 
 namespace BST

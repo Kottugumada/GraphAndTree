@@ -1,7 +1,7 @@
-using System;
-namespace HeapSortDemo {
-   public class example {
-      static void heapSort(int[] arr, int n) { 
+namespace HeapSortDemo
+{
+    public class example {
+      public int[] heapSort(int[] arr, int n) { 
          for (int i = n / 2 - 1; i >= 0; i--) 
             heapify(arr, n, i);
          for (int i = n-1; i>=0; i--) {
@@ -10,11 +10,12 @@ namespace HeapSortDemo {
             arr[i] = temp;
             heapify(arr, i, 0); 
          }
+            return arr;
       }
       static void heapify(int[] arr, int n, int i) {
          int largest = i;
-         int left = 2*i + 1;
-         int right = 2*i + 2;
+         int left = 2*i;
+         int right = 2*i + 1;
          if (left < n && arr[left] > arr[largest])
             largest = left;
          if (right < n && arr[right] >    arr[largest]) 

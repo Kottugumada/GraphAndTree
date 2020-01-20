@@ -1,18 +1,19 @@
- // Definition for a binary tree node.
-  // Time and Space Complexity O(n)
+// https://leetcode.com/problems/binary-search-tree-iterator/
+
+// Definition for a binary tree node.
+// Time and Space Complexity O(n)
 //  public class TreeNode {
 //      public int val;
 //      public TreeNode left;
 //      public TreeNode right;
 //      public TreeNode(int x) { val = x; }
 //  }
- using System;
-using System.Linq;
-using System.Text;
 using System.Collections.Generic;
+using System.Linq;
 
-namespace BST {
-public class BSTIterator {
+namespace BST
+{
+    public class BSTIterator {
     public Stack<TreeNode> st;
     public TreeNode curr;
     

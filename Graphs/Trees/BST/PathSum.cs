@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace BST
+namespace DataStructures
 {
     public class Solution
     {
@@ -10,19 +10,22 @@ namespace BST
             if (root == null) return false;
 
             Stack<TreeNode> st = new Stack<TreeNode>();
+            Stack<int> sums = new Stack<int>();
             st.Push(root);
-
+            sums.Push(sum);
             while( root != null || st.Any()) {
                 var node = st.Pop();
+                int value = sums.Pop();
+
                 if(node.left != null)
                 {
-                    node.left.val = node.val + node.left.val;
                     st.Push(node.left);
+                    sums.Push(value - node.val);
                 }
                 else if(node.right != null)
                 {
-                    node.right.val = node.val + node.right.val;
                     st.Push(node.right);
+                    sums.Push(value - node.val);
                 }
                 else if(node.left == null && node.right == null)
                 {

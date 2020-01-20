@@ -13,7 +13,7 @@ namespace DataStructures.Trees.BST.Traversal
             while (q.Count >0)
             {
                 int size = q.Count;
-                List<int> lvl = new List<int>();
+                IList<int> lvl = new List<int>();
                 while (size>0)
                 {
                     TreeNode node = q.Dequeue();

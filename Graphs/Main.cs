@@ -1,4 +1,4 @@
-﻿using Graphs.Heaps.Trees.Trees.BST.Traversal.LevelOrder;
+﻿using HeapSortDemo;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,13 +9,21 @@ namespace DataStructures
     {
         public static void Main(string[] args)
         {
-            LevelOrder_BottomUp lvlOrder = new LevelOrder_BottomUp();
-            TreeNode root = new TreeNode(3);
-            root.left = new TreeNode(9);
-            root.right = new TreeNode(20);
-            root.right.left = new TreeNode(15);
-            root.right.right = new TreeNode(7);
-            lvlOrder.LevelOrderBottom(root);
+            example ex = new example();
+            int[] arr = new int[] {4,5,2,7,8 };
+           Console.Write(ex.heapSort(arr, 5));
+            // LevelOrder_BottomUp lvlOrder = new LevelOrder_BottomUp();
+            //TreeNode root = new TreeNode(5);
+            //root.left = new TreeNode(4);
+            //root.right = new TreeNode(8);
+            //root.right.left = new TreeNode(13);
+            //root.right.right = new TreeNode(4);
+            //root.left.left = new TreeNode(11);
+            //root.left.left.left = new TreeNode(7);
+            //root.left.right = new TreeNode(2);
+            //Solution sl = new Solution();
+            //sl.HasPathSum(root, 22);
+            // lvlOrder.LevelOrderBottom(root);
             Console.ReadKey();
            
         }

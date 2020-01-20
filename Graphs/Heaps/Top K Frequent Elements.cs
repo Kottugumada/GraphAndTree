@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace DataStructures.Heaps
-    // bugs! does not work
+// bugs! does not work
 {
     public class Top_K_Frequent_Elements
     {
