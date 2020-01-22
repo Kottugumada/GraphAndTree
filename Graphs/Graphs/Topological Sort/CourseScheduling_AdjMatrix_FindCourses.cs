@@ -1,16 +1,16 @@
 ﻿// Adjacency Matrix time complexity is O(vertices ^2)
+using System;
 using System.Collections.Generic;
 
 namespace Graphs.Heaps.Trees.Graphs.Topological_Sort
 {
-	public class CourseScheduling_AdjMatrix
+	public class CourseScheduling_AdjMatrix_Courses
 	{
-		public bool CanFinish(int numCourses, int[][] prerequisites)
+		public int[] FindOrder(int numCourses, int[][] prerequisites)
 		{
 			int[] inDegree = new int[numCourses];
 			Stack<int> st = new Stack<int>();
-
-			int count = 0; // to check the the number of courses possible
+            List<int> courses = new List<int>();
 
 			// calculate all the courses that have prerequisites
 			// i is dependent on 0
@@ -34,9 +34,9 @@ namespace Graphs.Heaps.Trees.Graphs.Topological_Sort
 			while (st.Count > 0)
 			{
 				int curr = st.Pop();
-				count++;
-				// iterate over the prerequisites array to check  if the course that we just popped off is in the prerequisites
-				for (int i = 0; i < prerequisites.Length; i++)
+                courses.Insert(0,curr);
+                // iterate over the prerequisites array to check  if the course that we just popped off is in the prerequisites
+                for (int i = 0; i < prerequisites.Length; i++)
 				{
                     // look for courses which had a dependency 
                     // if the sample set is [[1,0],[2,0],[3,1],[3,2]]
@@ -54,7 +54,8 @@ namespace Graphs.Heaps.Trees.Graphs.Topological_Sort
 					}
 				}
 			}
-			return count == numCourses;
+            if (courses.Count != numCourses) return new int[0];
+            return courses.ToArray();
 		}
 	}
 }

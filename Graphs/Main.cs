@@ -1,4 +1,5 @@
-﻿using HeapSortDemo;
+﻿using Graphs.Heaps.Trees.Graphs.Topological_Sort;
+using HeapSortDemo;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,21 +10,28 @@ namespace DataStructures
     {
         public static void Main(string[] args)
         {
-            example ex = new example();
-            int[] arr = new int[] {4,5,2,7,8 };
-           Console.Write(ex.heapSort(arr, 5));
-            // LevelOrder_BottomUp lvlOrder = new LevelOrder_BottomUp();
-            //TreeNode root = new TreeNode(5);
-            //root.left = new TreeNode(4);
-            //root.right = new TreeNode(8);
-            //root.right.left = new TreeNode(13);
-            //root.right.right = new TreeNode(4);
-            //root.left.left = new TreeNode(11);
-            //root.left.left.left = new TreeNode(7);
-            //root.left.right = new TreeNode(2);
-            //Solution sl = new Solution();
-            //sl.HasPathSum(root, 22);
-            // lvlOrder.LevelOrderBottom(root);
+            CourseScheduling_AdjMatrix_Courses courses = new CourseScheduling_AdjMatrix_Courses();
+            int[][] prerequisites = new int[4][];
+            prerequisites[0] = new int[] { 1, 0};
+            prerequisites[1] = new int[] { 2, 0 };
+            prerequisites[2] = new int[] { 3, 1 };
+            prerequisites[3] = new int[] { 3, 2 };
+            courses.FindOrder(4, prerequisites);
+           // example ex = new example();
+           // int[] arr = new int[] {4,5,2,7,8 };
+           //Console.Write(ex.heapSort(arr, 5));
+           // LevelOrder_BottomUp lvlOrder = new LevelOrder_BottomUp();
+           //TreeNode root = new TreeNode(5);
+           //root.left = new TreeNode(4);
+           //root.right = new TreeNode(8);
+           //root.right.left = new TreeNode(13);
+           //root.right.right = new TreeNode(4);
+           //root.left.left = new TreeNode(11);
+           //root.left.left.left = new TreeNode(7);
+           //root.left.right = new TreeNode(2);
+           //Solution sl = new Solution();
+           //sl.HasPathSum(root, 22);
+           // lvlOrder.LevelOrderBottom(root);
             Console.ReadKey();
            
         }
