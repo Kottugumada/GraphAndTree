@@ -1,4 +1,5 @@
 ﻿using Graphs.Heaps.Trees.Graphs.Topological_Sort;
+using Graphs.Heaps.Trees.Heaps;
 using HeapSortDemo;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,13 @@ namespace DataStructures
     {
         public static void Main(string[] args)
         {
+            KClosedToOrigin kC = new KClosedToOrigin();
+            int[][] points = new int[2][];
+            points[0] = new int[] { 1, 0 };
+            points[1] = new int[] { 0, 1 };
+            kC.KClosest(points, 2);
+            TopKWithSortedDictionary topK = new TopKWithSortedDictionary();
+            topK.TopKFrequent(new int[] {1,1,1,2,2,3 }, 2);
             CourseScheduling_AdjMatrix_Courses courses = new CourseScheduling_AdjMatrix_Courses();
             int[][] prerequisites = new int[4][];
             prerequisites[0] = new int[] { 1, 0};
