@@ -8,6 +8,7 @@
 //  }
 using System.Linq;
 using System.Collections.Generic;
+using System;
 
 namespace BST
 {
@@ -31,5 +32,25 @@ namespace BST
         }
         return res;
     }
-}
+
+        /// <summary>
+        /// In Order Traversal Recursive
+        /// 1. Traverse left subtree
+        /// 2. Visit root node
+        /// 3. Traverse right subtree
+        /// </summary>
+        /// <param name="rootNode"></param>
+        public void InOrder(TreeNode rootNode)
+        {
+            if (rootNode.left != null)
+            {
+                InOrder(rootNode.left);
+            }
+            Console.WriteLine(rootNode.val.ToString());
+            if (rootNode.right != null)
+            {
+                InOrder(rootNode.right);
+            }
+        }
+    }
 }

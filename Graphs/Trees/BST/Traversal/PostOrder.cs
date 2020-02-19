@@ -2,6 +2,7 @@
  // Time and Space Complexity O(n)
 using System.Linq;
 using System.Collections.Generic;
+using System;
 
 namespace BST{
 //  public class TreeNode {
@@ -30,5 +31,25 @@ public class Solution_PostOrderTraversal {
         }
         return res;
     }
-}
+
+        /// <summary>
+        /// Post Order Traversal Recursive
+        /// 1. Traverse the left subtree.
+        /// 2. Traverse the right subtree.
+        //  3. Visit the root.
+        /// </summary>
+        /// <param name="rootNode"></param>
+        public void PostOrder(TreeNode rootNode)
+        {
+            if (rootNode.left != null)
+            {
+                PostOrder(rootNode.left);
+            }
+            if (rootNode.right != null)
+            {
+                PostOrder(rootNode.right);
+            }
+            Console.WriteLine(rootNode.val.ToString());
+        }
+    }
 }
