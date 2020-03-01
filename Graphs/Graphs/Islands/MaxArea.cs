@@ -15,7 +15,7 @@ namespace Graphs.Heaps.Trees.Graphs.Islands
 			}
 			int row = grid.Length;
 			int col = grid[0].Length;
-			for (int i = 0; i < row; i++)
+			for (int i = 0; i < row; i++) 
 			{
 				for (int j = 0; j < col; j++)
 				{
@@ -25,7 +25,6 @@ namespace Graphs.Heaps.Trees.Graphs.Islands
 					}
 				}
 			}
-
 			return maxArea;
 		}
 
