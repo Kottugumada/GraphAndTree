@@ -1,6 +1,4 @@
-﻿using Graphs.Heaps.Trees.Graphs.Topological_Sort;
-using Graphs.Heaps.Trees.Heaps;
-using HeapSortDemo;
+﻿using Graphs.Heaps.Trees.Graphs.Maze;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,20 +9,26 @@ namespace DataStructures
     {
         public static void Main(string[] args)
         {
-            KClosedToOrigin kC = new KClosedToOrigin();
-            int[][] points = new int[2][];
-            points[0] = new int[] { 1, 0 };
-            points[1] = new int[] { 0, 1 };
-            kC.KClosest(points, 2);
-            TopKWithSortedDictionary topK = new TopKWithSortedDictionary();
-            topK.TopKFrequent(new int[] {1,1,1,2,2,3 }, 2);
-            CourseScheduling_AdjMatrix_Courses courses = new CourseScheduling_AdjMatrix_Courses();
-            int[][] prerequisites = new int[4][];
-            prerequisites[0] = new int[] { 1, 0};
-            prerequisites[1] = new int[] { 2, 0 };
-            prerequisites[2] = new int[] { 3, 1 };
-            prerequisites[3] = new int[] { 3, 2 };
-            courses.FindOrder(4, prerequisites);
+
+            int[][] grid = new int[1][];
+            grid[0] = new int[] { 1, 2 };
+            //grid[1] = new int[] { 1, 1, 0 };
+            //grid[2] = new int[] { 0, 1, 1 };
+            Console.Write(RottingOranges.OrangesRotting(grid));
+            //KClosedToOrigin kC = new KClosedToOrigin();
+            //int[][] points = new int[2][];
+            //points[0] = new int[] { 1, 0 };
+            //points[1] = new int[] { 0, 1 };
+            //kC.KClosest(points, 2);
+            //TopKWithSortedDictionary topK = new TopKWithSortedDictionary();
+            //topK.TopKFrequent(new int[] {1,1,1,2,2,3 }, 2);
+            //CourseScheduling_AdjMatrix_Courses courses = new CourseScheduling_AdjMatrix_Courses();
+            //int[][] prerequisites = new int[4][];
+            //prerequisites[0] = new int[] { 1, 0};
+            //prerequisites[1] = new int[] { 2, 0 };
+            //prerequisites[2] = new int[] { 3, 1 };
+            //prerequisites[3] = new int[] { 3, 2 };
+            //courses.FindOrder(4, prerequisites);
            // example ex = new example();
            // int[] arr = new int[] {4,5,2,7,8 };
            //Console.Write(ex.heapSort(arr, 5));
