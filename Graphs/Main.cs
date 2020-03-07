@@ -1,7 +1,10 @@
-﻿using Graphs.Heaps.Trees.Graphs.Maze;
+﻿using Graphs.Heaps.Trees.Graphs.Topological_Sort;
+using Graphs.Heaps.Trees.Heaps;
+using HeapSortDemo;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Graphs.Heaps.Trees.Graphs.Islands;
 
 namespace DataStructures
 {
@@ -9,12 +12,6 @@ namespace DataStructures
     {
         public static void Main(string[] args)
         {
-
-            int[][] grid = new int[1][];
-            grid[0] = new int[] { 1, 2 };
-            //grid[1] = new int[] { 1, 1, 0 };
-            //grid[2] = new int[] { 0, 1, 1 };
-            Console.Write(RottingOranges.OrangesRotting(grid));
             //KClosedToOrigin kC = new KClosedToOrigin();
             //int[][] points = new int[2][];
             //points[0] = new int[] { 1, 0 };
@@ -23,12 +20,16 @@ namespace DataStructures
             //TopKWithSortedDictionary topK = new TopKWithSortedDictionary();
             //topK.TopKFrequent(new int[] {1,1,1,2,2,3 }, 2);
             //CourseScheduling_AdjMatrix_Courses courses = new CourseScheduling_AdjMatrix_Courses();
-            //int[][] prerequisites = new int[4][];
-            //prerequisites[0] = new int[] { 1, 0};
-            //prerequisites[1] = new int[] { 2, 0 };
-            //prerequisites[2] = new int[] { 3, 1 };
-            //prerequisites[3] = new int[] { 3, 2 };
-            //courses.FindOrder(4, prerequisites);
+            char[][] grid = new char[4][];
+            grid[0] = new char[] {'X', 'X', 'O', 'O'}; // { '1','1','0','0', '0'};
+            grid[2] = new char[] { 'X', 'O', 'O', 'X' }; // { '1', '1', '0' , '0', '0' };
+            grid[3] = new char[] { 'X', 'X', 'O', 'X' }; // { '0','0','1','0','0' };
+            grid[1] = new char[] { 'X', 'O', 'X', 'X' }; // { '0','0','0','1','1'};
+            SurroundedRegions s = new SurroundedRegions();
+            s.Solve(grid);
+            NumberOfIslands n = new NumberOfIslands();
+            n.NumIslands(grid);
+            // courses.FindOrder(4, prerequisites);
            // example ex = new example();
            // int[] arr = new int[] {4,5,2,7,8 };
            //Console.Write(ex.heapSort(arr, 5));
