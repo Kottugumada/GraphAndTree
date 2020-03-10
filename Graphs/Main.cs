@@ -1,10 +1,11 @@
-﻿using Graphs.Heaps.Trees.Graphs.Topological_Sort;
-using Graphs.Heaps.Trees.Heaps;
-using HeapSortDemo;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using Graphs.Heaps.Trees.Graphs.Islands;
+using Graphs.Heaps.Trees.Graphs.Topological_Sort;
+using Graphs.Heaps.Trees.Graphs.Word_Ladder;
+using Graphs.Heaps.Trees.Heaps;
+using Graphs.Heaps.Trees.Trees.BST.Traversal.LevelOrder;
 
 namespace DataStructures
 {
@@ -12,39 +13,43 @@ namespace DataStructures
     {
         public static void Main(string[] args)
         {
-            //KClosedToOrigin kC = new KClosedToOrigin();
+            KClosedToOrigin kC = new KClosedToOrigin();
             //int[][] points = new int[2][];
             //points[0] = new int[] { 1, 0 };
             //points[1] = new int[] { 0, 1 };
             //kC.KClosest(points, 2);
-            //TopKWithSortedDictionary topK = new TopKWithSortedDictionary();
+            TopKWithSortedDictionary topK = new TopKWithSortedDictionary();
             //topK.TopKFrequent(new int[] {1,1,1,2,2,3 }, 2);
-            //CourseScheduling_AdjMatrix_Courses courses = new CourseScheduling_AdjMatrix_Courses();
-            char[][] grid = new char[4][];
-            grid[0] = new char[] {'X', 'X', 'O', 'O'}; // { '1','1','0','0', '0'};
-            grid[2] = new char[] { 'X', 'O', 'O', 'X' }; // { '1', '1', '0' , '0', '0' };
-            grid[3] = new char[] { 'X', 'X', 'O', 'X' }; // { '0','0','1','0','0' };
-            grid[1] = new char[] { 'X', 'O', 'X', 'X' }; // { '0','0','0','1','1'};
+            CourseScheduling_AdjMatrix_Courses courses = new CourseScheduling_AdjMatrix_Courses();
+            //char[][] grid = new char[4][];
+            //grid[0] = new char[] {'X', 'X', 'O', 'O'}; // { '1','1','0','0', '0'};
+            //grid[2] = new char[] { 'X', 'O', 'O', 'X' }; // { '1', '1', '0' , '0', '0' };
+            //grid[3] = new char[] { 'X', 'X', 'O', 'X' }; // { '0','0','1','0','0' };
+            //grid[1] = new char[] { 'X', 'O', 'X', 'X' }; // { '0','0','0','1','1'};
             SurroundedRegions s = new SurroundedRegions();
-            s.Solve(grid);
+            //s.Solve(grid);
             NumberOfIslands n = new NumberOfIslands();
-            n.NumIslands(grid);
+            //n.NumIslands(grid);
             // courses.FindOrder(4, prerequisites);
-           // example ex = new example();
-           // int[] arr = new int[] {4,5,2,7,8 };
-           //Console.Write(ex.heapSort(arr, 5));
-           // LevelOrder_BottomUp lvlOrder = new LevelOrder_BottomUp();
-           //TreeNode root = new TreeNode(5);
-           //root.left = new TreeNode(4);
-           //root.right = new TreeNode(8);
-           //root.right.left = new TreeNode(13);
-           //root.right.right = new TreeNode(4);
-           //root.left.left = new TreeNode(11);
-           //root.left.left.left = new TreeNode(7);
-           //root.left.right = new TreeNode(2);
-           //Solution sl = new Solution();
-           //sl.HasPathSum(root, 22);
-           // lvlOrder.LevelOrderBottom(root);
+            // example ex = new example();
+            // int[] arr = new int[] {4,5,2,7,8 };
+            //Console.Write(ex.heapSort(arr, 5));
+            LevelOrder_BottomUp lvlOrder = new LevelOrder_BottomUp();
+            //TreeNode root = new TreeNode(5);
+            //root.left = new TreeNode(4);
+            //root.right = new TreeNode(8);
+            //root.right.left = new TreeNode(13);
+            //root.right.right = new TreeNode(4);
+            //root.left.left = new TreeNode(11);
+            //root.left.left.left = new TreeNode(7);
+            //root.left.right = new TreeNode(2);
+            //Solution sl = new Solution();
+            //sl.HasPathSum(root, 22);
+            // lvlOrder.LevelOrderBottom(root);
+            WordLadder_BFS wl = new WordLadder_BFS();
+            wl.LadderLength_BFS("hit", "cog", new string[] { "hot", "dot", "dog", "lot", "log", "cog" });
+            WordLadder_BFS_LessEfficient wlbfs = new WordLadder_BFS_LessEfficient();
+            // wlbfs.FindLadders("hit","cog",new string[] { "hot", "dot", "dog", "lot", "log", "cog" });
             Console.ReadKey();
            
         }
