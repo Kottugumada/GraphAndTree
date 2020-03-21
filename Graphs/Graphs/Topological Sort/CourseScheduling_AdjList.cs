@@ -29,7 +29,6 @@ namespace Graphs.Heaps.Trees.Graphs.Topological_Sort
 
 		private bool HasCycle(List<int>[] adjacencyList)
 		{
-			var stack = new Stack<int>();
 			var visited = new bool[adjacencyList.Length];
 			var stacked = new bool[adjacencyList.Length];
 

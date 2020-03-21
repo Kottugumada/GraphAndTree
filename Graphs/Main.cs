@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Graphs.Heaps.Trees.Graphs;
 using Graphs.Heaps.Trees.Graphs.Islands;
+using Graphs.Heaps.Trees.Graphs.StronglyConnectedComponents;
 using Graphs.Heaps.Trees.Graphs.Topological_Sort;
 using Graphs.Heaps.Trees.Graphs.Word_Ladder;
 using Graphs.Heaps.Trees.Heaps;
@@ -47,12 +49,73 @@ namespace DataStructures
             //sl.HasPathSum(root, 22);
             // lvlOrder.LevelOrderBottom(root);
             WordLadder_BFS wl = new WordLadder_BFS();
-            wl.LadderLength_BFS("hit", "cog", new string[] { "hot", "dot", "dog", "lot", "log", "cog" });
-            WordLadder_BFS_LessEfficient wlbfs = new WordLadder_BFS_LessEfficient();
+            // wl.LadderLength_BFS("hit", "cog", new string[] { "hot", "dot", "dog", "lot", "log", "cog" });
+            // WordLadder_BFS_LessEfficient wlbfs = new WordLadder_BFS_LessEfficient();
             // wlbfs.FindLadders("hit","cog",new string[] { "hot", "dot", "dog", "lot", "log", "cog" });
+            //Trie obj = new Trie();
+            //obj.InsertWord("spin");
+            //bool exists = obj.Search("spin");
+            //bool startsWith = obj.StartsWith("spinclass");
+
+            int nodes = 3;
+            List<List<int>> graph = new List<List<int>>();
+            graph = CreateGraph(nodes);
+
+            AddEdge(graph, 0, 1);
+            //AddEdge(graph, 0, 2);
+            AddEdge(graph, 1, 2);
+            //AddEdge(graph, 2, 3);
+            //AddEdge(graph, 3, 4);
+            //AddEdge(graph, 2, 5);
+            //AddEdge(graph, 5, 6);
+            //AddEdge(graph, 6, 7);
+            //AddEdge(graph, 7, 8);
+            //AddEdge(graph, 8, 5);
+            //BridgesAjacencyList bridge = new BridgesAjacencyList(graph, nodes);
+            //List<int> bridges = bridge.FindBridges();
+
+            // print the bridges
+            //for (int i = 0; i < bridges.Count/2; i++)
+            //{
+            //    int node1 = bridges[2*i];
+            //    int node2 = bridges[2 * i + 1];
+            //    Console.WriteLine("Bridge is between node1: " + node1.ToString() + " and node2: " + node2.ToString());
+            //}
+
+            ArticulationPointAdjacencyList artAdj = new ArticulationPointAdjacencyList(graph, nodes);
+            bool[] isArticulationPoint = artAdj.FindArticulationPoints();
+
+            for (int i = 0; i < nodes; i++)
+            {
+                if (isArticulationPoint[i])
+                {
+                    Console.WriteLine("ArticulationPoint is at index : " + i);
+                }
+            }
+
             Console.ReadKey();
            
         }
+
+        private static void AddEdge(List<List<int>> graph, int src, int dest)
+        {
+            for (int i = 0; i < graph.Count; i++)
+            {
+                graph[src].Add(dest);
+                graph[dest].Add(src);
+            }
+        }
+
+        private static List<List<int>> CreateGraph(int nodes)
+        {
+            List<List<int>> graph = new List<List<int>>();
+            for (int i = 0; i < nodes; i++)
+            {
+                graph.Add(new List<int>());
+            }
+            return graph;
+        }
+
         public static List<string> orderedJunctionBoxes(int numberOfBoxes,
                                          string[] boxList)
         {
