@@ -9,7 +9,7 @@ namespace Graphs.Heaps.Trees.Graphs.Topological_Sort
 		public int[] FindOrder(int numCourses, int[][] prerequisites)
 		{
 			int[] inDegree = new int[numCourses];
-			Stack<int> st = new Stack<int>();
+			Stack<int> nodeWithNoIncomingEdges = new Stack<int>();
             List<int> courses = new List<int>();
 
 			// calculate all the courses that have prerequisites
@@ -27,13 +27,13 @@ namespace Graphs.Heaps.Trees.Graphs.Topological_Sort
                 // might start with a [1,0]
                 if (inDegree[i] == 0)
 				{
-					st.Push(i);
+					nodeWithNoIncomingEdges.Push(i);
 				}
 			}
 			// loop till stack is not empty
-			while (st.Count > 0)
+			while (nodeWithNoIncomingEdges.Count > 0)
 			{
-				int curr = st.Pop();
+				int curr = nodeWithNoIncomingEdges.Pop();
                 courses.Insert(0,curr);
                 // iterate over the prerequisites array to check  if the course that we just popped off is in the prerequisites
                 for (int i = 0; i < prerequisites.Length; i++)
@@ -49,7 +49,7 @@ namespace Graphs.Heaps.Trees.Graphs.Topological_Sort
                         // removing dependency that course 1 has
 						if (inDegree[prerequisites[i][0]] == 0)
 						{
-							st.Push(prerequisites[i][0]);
+							nodeWithNoIncomingEdges.Push(prerequisites[i][0]);
 						}
 					}
 				}
