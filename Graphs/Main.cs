@@ -8,6 +8,7 @@ using Graphs.Heaps.Trees.Graphs.Topological_Sort;
 using Graphs.Heaps.Trees.Graphs.Word_Ladder;
 using Graphs.Heaps.Trees.Heaps;
 using Graphs.Heaps.Trees.Trees.BST.Traversal.LevelOrder;
+using Graphs.Heaps.Trees.Trees.Spanning_Tree;
 
 namespace DataStructures
 {
@@ -99,6 +100,15 @@ namespace DataStructures
             connections.Add(new List<int>() { 2,0 });
             connections.Add(new List<int>() { 1,3 });
             cr.CriticalConnections(4, connections);
+
+
+            PrimsAlgorithm prims = new PrimsAlgorithm();
+            int[,] pm = new int[,] { { 0, 2, 0, 6, 0 },
+                                      { 2, 0, 3, 8, 5 },
+                                      { 0, 3, 0, 0, 7 },
+                                      { 6, 8, 0, 0, 9 },
+                                      { 0, 5, 7, 9, 0 } };
+            prims.PrimsMinSpanningTree(pm, 5);
 
             Console.ReadKey();
            
