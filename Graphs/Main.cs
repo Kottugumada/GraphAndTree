@@ -82,16 +82,23 @@ namespace DataStructures
             //    Console.WriteLine("Bridge is between node1: " + node1.ToString() + " and node2: " + node2.ToString());
             //}
 
-            ArticulationPointAdjacencyList artAdj = new ArticulationPointAdjacencyList(graph, nodes);
-            bool[] isArticulationPoint = artAdj.FindArticulationPoints();
+            //ArticulationPointAdjacencyList artAdj = new ArticulationPointAdjacencyList(graph, nodes);
+            //bool[] isArticulationPoint = artAdj.FindArticulationPoints();
 
-            for (int i = 0; i < nodes; i++)
-            {
-                if (isArticulationPoint[i])
-                {
-                    Console.WriteLine("ArticulationPoint is at index : " + i);
-                }
-            }
+            //for (int i = 0; i < nodes; i++)
+            //{
+            //    if (isArticulationPoint[i])
+            //    {
+            //        Console.WriteLine("ArticulationPoint is at index : " + i);
+            //    }
+            //}
+            CriticalConnectionsInANetwork cr = new CriticalConnectionsInANetwork();
+            IList<IList<int>> connections = new List<IList<int>>();
+            connections.Add(new List<int>() {0,1 });
+            connections.Add(new List<int>() { 1, 2 });
+            connections.Add(new List<int>() { 2,0 });
+            connections.Add(new List<int>() { 1,3 });
+            cr.CriticalConnections(4, connections);
 
             Console.ReadKey();
            

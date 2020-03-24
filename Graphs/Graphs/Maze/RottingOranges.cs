@@ -7,61 +7,106 @@ namespace Graphs.Heaps.Trees.Graphs.Maze
 {
     public class RottingOranges
     {
-        static int[] dr = new int[] { -1, 0, 1, 0 };
-        static int[] dc = new int[] { 0, -1, 0, 1 };
-        public static int OrangesRotting(int[][] grid)
-        {
-            int rows = grid.Length;
-            int cols = grid[0].Length;
+        private int[][] grid;
+        private int rows;
+        private int columns;
 
-            int numFresh = 0;
-            // Queue<int[]> q = new Queue<int[]>();
-            Queue<int> q = new Queue<int>();
-            Dictionary<int, int> depth = new Dictionary<int, int>();
-            // map the grid
+        public int OrangesRotting(int[][] grid)
+        {
+            if (grid == null || grid.Length == 0 || grid[0].Length == 0)
+                return -1;
+
+            this.grid = grid;
+            rows = grid.Length;
+            columns = grid[0].Length;
+
+            int fresh = 0;
+            int rotten = 0;
+            // count fresh and rotten
             for (int i = 0; i < rows; i++)
             {
-                for (int j = 0; j < cols; j++)
+                for (int j = 0; j < columns; j++)
+                {
+                    if (grid[i][j] == 1)
+                        fresh++;
+                    else if (grid[i][j] == 2)
+                        rotten++;
+                }
+            }
+
+            // nothing to rot
+            if (fresh == 0)
+                return 0;
+
+            // from nowhere to rot
+            if (rotten == 0)
+                return -1;
+
+            int steps = 0;
+            int left = fresh;
+            // count steps
+            while (left > 0)
+            {
+                int changed = Update();
+                if (changed == 0)
+                    break;
+
+                // update remaining
+                left -= changed;
+                steps++;
+            }
+
+            // something left means it is impossible to do it
+            return left > 0 ? -1 : steps;
+        }
+
+        private bool Outside(int i, int j)
+        {
+            return i < 0 || i >= rows || j < 0 || j >= columns;
+        }
+
+        private int Update()
+        {
+            int changed = 0;
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < columns; j++)
                 {
                     if (grid[i][j] == 2)
                     {
-                        // q.Enqueue(new int[] { i, j});
-                        int code = i * cols + j;
-                        q.Enqueue(code);
-                        depth.Add(code, 0);
+                        changed += Mark(i - 1, j);
+                        changed += Mark(i + 1, j);
+                        changed += Mark(i, j - 1);
+                        changed += Mark(i, j + 1);
                     }
-                    //else if(grid[i][j] == 1)
-                    //{
-                    //    numFresh++;
-                    //}
                 }
             }
 
-            if (numFresh == 0) return 0;
-
-            int[][] dirs = new int[4][];
-            dirs[0] = new int[] { 1, 0 };
-            dirs[1] = new int[] { -1, 0 };
-            dirs[2] = new int[] { 0, 1 };
-            dirs[3] = new int[] { 0, -1 };
-
-            int minutes = 0;
-
-            while (q.Any())
+            // update to rotten candidate to rotten
+            for (int i = 0; i < rows; i++)
             {
-                int code = q.Dequeue();
-                int r = code / cols;
-                int c = code % cols;
-                minutes++;
-                int size = q.Count;
-                for (int k = 0; k < 4; k++)
+                for (int j = 0; j < columns; j++)
                 {
-                        int nr = r + dr[k];
-                        int nc = c + dc[k];
-
+                    if (grid[i][j] == 3)
+                    {
+                        grid[i][j] = 2;
+                    }
                 }
             }
-            return numFresh == 0 ? minutes-1 : - 1;
+
+
+            return changed;
+        }
+
+        int Mark(int i, int j)
+        {
+            if (Outside(i, j) || grid[i][j] != 1)
+                return 0;
+
+            // mark as rotten candidate
+            grid[i][j] = 3;
+
+            return 1;
         }
     }
 }
