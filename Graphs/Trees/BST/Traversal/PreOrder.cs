@@ -14,7 +14,6 @@ public class Solution_PreOrderTraversal {
     public IList<int> PreOrderTraversal(TreeNode root) {
         IList<int> res = new List<int>();
         if(root == null) return res;
-        string str = "";
         string[] str1 = new string[] { "1"};
         str1.Contains("");
         Dictionary<string, int> freq = new Dictionary<string, int>();

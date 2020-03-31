@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Graphs\StronglyConnectedComponents\Routers2.cs" />
     <Compile Remove="Trees\TreeDFS.cs" />
   </ItemGroup>
 </Project>

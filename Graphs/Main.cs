@@ -5,10 +5,12 @@ using Graphs.Heaps.Trees.Graphs;
 using Graphs.Heaps.Trees.Graphs.Islands;
 using Graphs.Heaps.Trees.Graphs.StronglyConnectedComponents;
 using Graphs.Heaps.Trees.Graphs.Topological_Sort;
+using Graphs.Heaps.Trees.Graphs.Trie;
 using Graphs.Heaps.Trees.Graphs.Word_Ladder;
 using Graphs.Heaps.Trees.Heaps;
 using Graphs.Heaps.Trees.Trees.BST.Traversal.LevelOrder;
 using Graphs.Heaps.Trees.Trees.Spanning_Tree;
+using static Graphs.Heaps.Trees.Graphs.Trie.SearchSuggestions;
 
 namespace DataStructures
 {
@@ -32,7 +34,36 @@ namespace DataStructures
             SurroundedRegions s = new SurroundedRegions();
             //s.Solve(grid);
             NumberOfIslands n = new NumberOfIslands();
+            //var arr = new int[5, 4]
+            //                    {
+            // {1,1, 0, 0},
+            // {0,0, 1, 0},
+            // {0,0, 0, 0},
+            // {1,0, 1, 1},
+            // {1,1, 1, 1},
+            //                    };
+            //n.numberAmazonGoStores(5, 4, arr);
+
+            MinCostInAGrid minC = new MinCostInAGrid();
+            int[][] grid = new int[4][];
+            grid[0] = new int[] { 1, 1, 1, 1 };
+            grid[1] = new int[] { 2, 2, 2, 2 };
+            grid[2] = new int[] { 1, 1, 1, 1 };
+            grid[3] = new int[] { 2, 2, 2, 2 };
+            //minC.MinCost(grid);
+
             //n.NumIslands(grid);
+            CriticalRoutersInANetwork rt = new CriticalRoutersInANetwork();
+            //List<List<int>> ls = new List<List<int>> {
+            //    new List<int> {1,2},
+            //    new List<int> {2,3},
+            //    new List<int> {3,4},
+            //    new List<int> {4,5},
+            //    new List<int> {5,1},
+            //};
+            //rt.CriticalRouters(6,7,ls);
+
+
             // courses.FindOrder(4, prerequisites);
             // example ex = new example();
             // int[] arr = new int[] {4,5,2,7,8 };
@@ -53,18 +84,18 @@ namespace DataStructures
             // wl.LadderLength_BFS("hit", "cog", new string[] { "hot", "dot", "dog", "lot", "log", "cog" });
             // WordLadder_BFS_LessEfficient wlbfs = new WordLadder_BFS_LessEfficient();
             // wlbfs.FindLadders("hit","cog",new string[] { "hot", "dot", "dog", "lot", "log", "cog" });
-            //Trie obj = new Trie();
-            //obj.InsertWord("spin");
+            TrieDataStructure obj = new TrieDataStructure();
+            obj.InsertWord("spinclass");
             //bool exists = obj.Search("spin");
-            //bool startsWith = obj.StartsWith("spinclass");
+            bool startsWith = obj.StartsWith("spin");
 
-            int nodes = 3;
+            //int nodes = 3;
             List<List<int>> graph = new List<List<int>>();
-            graph = CreateGraph(nodes);
+            //graph = CreateGraph(nodes);
 
-            AddEdge(graph, 0, 1);
+            //AddEdge(graph, 0, 1);
             //AddEdge(graph, 0, 2);
-            AddEdge(graph, 1, 2);
+           // AddEdge(graph, 1, 2);
             //AddEdge(graph, 2, 3);
             //AddEdge(graph, 3, 4);
             //AddEdge(graph, 2, 5);
@@ -94,21 +125,21 @@ namespace DataStructures
             //    }
             //}
             CriticalConnectionsInANetwork cr = new CriticalConnectionsInANetwork();
-            IList<IList<int>> connections = new List<IList<int>>();
-            connections.Add(new List<int>() {0,1 });
-            connections.Add(new List<int>() { 1, 2 });
-            connections.Add(new List<int>() { 2,0 });
-            connections.Add(new List<int>() { 1,3 });
-            cr.CriticalConnections(4, connections);
+            //IList<IList<int>> connections = new List<IList<int>>();
+            //connections.Add(new List<int>() {0,1 });
+            //connections.Add(new List<int>() { 1, 2 });
+            //connections.Add(new List<int>() { 2,0 });
+            //connections.Add(new List<int>() { 1,3 });
+            //cr.CriticalConnections(4, connections);
 
 
             PrimsAlgorithm prims = new PrimsAlgorithm();
-            int[,] pm = new int[,] { { 0, 2, 0, 6, 0 },
-                                      { 2, 0, 3, 8, 5 },
-                                      { 0, 3, 0, 0, 7 },
-                                      { 6, 8, 0, 0, 9 },
-                                      { 0, 5, 7, 9, 0 } };
-            prims.PrimsMinSpanningTree(pm, 5);
+            //int[,] pm = new int[,] { { 0, 2, 0, 6, 0 },
+            //                          { 2, 0, 3, 8, 5 },
+            //                          { 0, 3, 0, 0, 7 },
+            //                          { 6, 8, 0, 0, 9 },
+            //                          { 0, 5, 7, 9, 0 } };
+            //prims.PrimsMinSpanningTree(pm, 5);
 
             Console.ReadKey();
            
