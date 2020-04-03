@@ -31,8 +31,8 @@ function findBridges(){
     visted[curr] = true // mark the current node
     id = id + 1
     lowLink[curr] = ids[curr] = id
-
-  for each edge from node 'curr' to node 'dest'
+    
+    for each edge from node 'curr' to node 'dest'
     for(dest : g[curr]){
         if(dest == parent){
             continue
