@@ -6,9 +6,9 @@ g = adjacenyList of an undirected graph
 n = size of the graph
 
 # in the these arrays index i represents node i
-* ids = [0,0...0,0]                           # length n   
-* lowLink = [0,0...0,0]                       # length n   
-* visited = [false, false... false, false]    # length n   
+* ids =		[0,		0...		0,	0]        # length n   
+* lowLink = [0,		0...		0,	0]        # length n   
+* visited = [false, false... false, false]    # length n    
 
 function findBridges(){
     bridges = []
@@ -32,7 +32,7 @@ function findBridges(){
     id = id + 1
     lowLink[curr] = ids[curr] = id
 
-  //for each edge from node 'curr' to node 'dest'
+  for each edge from node 'curr' to node 'dest'
     for(dest : g[curr]){
         if(dest == parent){
             continue
