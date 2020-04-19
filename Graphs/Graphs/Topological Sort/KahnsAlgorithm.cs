@@ -31,7 +31,7 @@ namespace Graphs.Heaps.Trees.Graphs.Topological_Sort
             {
                 int curr = nodesWithNoIncomingEdges.Pop();
                 // add to order array 
-                // this will finally give the topologocally sorted values
+                // this will finally give the topologically sorted values
                 order[index++] = curr;
                 foreach (var dest in graph[curr])
                 {

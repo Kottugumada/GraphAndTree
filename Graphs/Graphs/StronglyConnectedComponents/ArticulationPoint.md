@@ -1,16 +1,19 @@
-﻿# Pseudocode Articulation Point
- # reference https://www.youtube.com/watch?v=aZXi1unBdJA&t=76s
+﻿### Articulation Point
+reference https://www.youtube.com/watch?v=aZXi1unBdJA&t=76s
 
-id = 0;
+```csharp
+id = 0;       
 g = adjacenyList of an undirected graph
 n = size of the graph
 outEdgeCount = 0 // cannot be an articulation point if it does not have more than one outgoing edges
 
-# in the these arrays index i represents node i
+
+// in these arrays index i represents node i
 ids = [0,0...0,0]                           # length n
 lowLink = [0,0...0,0]                       # length n
 visited = [false, false... false, false]    # length n
 isArt = [false, false... false, false]		# length n
+
 function findArtPoints(){
     bridges = []
     # finds all bridges in the graph across various connected components
@@ -23,13 +26,15 @@ function findArtPoints(){
     }
     return isArt
 }
+```
+* perform depth first search to find the bridges
+* `curr` is the current node
+* `parent` is the previous node
+* The bridges list is always of even length 
+* and indexes (2*i, 2*i+1) form a bridges
 
-# perform depth first search to find the bridges
-# curr is the current node
-# parent is the previous node
-# The bridges list is always of even length 
-# and indexes (2*i, 2*i+1) form a bridges
 
+```csharp
 dfs(root, curr, parent){
 	if(parent == root){
 	outEdgeCount++;
@@ -38,7 +43,7 @@ dfs(root, curr, parent){
     id = id + 1
     lowLink[curr] = ids[curr] = id
 
-    # for each edge from node 'curr' to node 'dest'
+    foreach(edge from node curr to node dest)
     for(dest : g[curr]){
         if(dest == parent){
             continue
@@ -59,3 +64,5 @@ dfs(root, curr, parent){
         }
     }
 }
+```
+

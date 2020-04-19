@@ -4,6 +4,10 @@ namespace Graphs.Heaps.Trees.Graphs.Islands
 {
 	public class SurroundedRegions
 	{
+        /// <summary>
+        /// https://leetcode.com/problems/surrounded-regions
+        /// </summary>
+        /// <param name="board"></param>
 		public void Solve(char[][] board)
 		{
 			if (board == null || board[0].Length == 0)

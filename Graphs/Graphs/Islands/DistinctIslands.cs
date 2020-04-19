@@ -45,6 +45,10 @@ namespace Graphs.Heaps.Trees.Graphs.Islands
                 sb.Append("up");
                 DFS_Islands(grid, i-1, j, sb);
             }
+            else
+            {
+                sb.Append("notUp");
+            }
             if (i + 1 < grid.Length && grid[i + 1][j] == 1)
             {
                 sb.Append("down");

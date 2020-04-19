@@ -10,11 +10,11 @@ namespace DataStructures.Trees.BST.Traversal
             if (root == null) return res;
             Queue<TreeNode> q = new Queue<TreeNode>();
             q.Enqueue(root);
-            while (q.Count >0)
+            while (q.Count > 0)
             {
                 int size = q.Count;
                 IList<int> lvl = new List<int>();
-                while (size>0)
+                while (size > 0)
                 {
                     TreeNode node = q.Dequeue();
                     lvl.Add(node.val);
@@ -25,6 +25,37 @@ namespace DataStructures.Trees.BST.Traversal
                 res.Add(lvl);
             }
             return res;
+        }
+        IList<IList<int>> levels = new List<IList<int>>();
+        public IList<IList<int>> LevelOrderTraversal_Recursive(TreeNode root)
+        {
+            if (root == null)
+            {
+                return levels;
+            }
+            Helper(root,0);
+            return levels;
+        }
+
+        private void Helper(TreeNode root, int level)
+        {
+            // start at the currenr level
+            if (levels.Count == level)
+            {
+                levels.Add(new List<int>());
+            }
+            // fill the current level
+            levels[level].Add(root.val);
+
+            // process child nodes
+            if (root.left != null)
+            {
+                Helper(root.left, level + 1);
+            }
+            if(root.right != null)
+            {
+                Helper(root.right, level + 1);
+            }
         }
     }
 }

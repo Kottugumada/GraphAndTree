@@ -81,13 +81,13 @@ namespace DataStructures
             //sl.HasPathSum(root, 22);
             // lvlOrder.LevelOrderBottom(root);
             WordLadder_BFS wl = new WordLadder_BFS();
-            // wl.LadderLength_BFS("hit", "cog", new string[] { "hot", "dot", "dog", "lot", "log", "cog" });
+            wl.LadderLength_BFS("hit", "cog", new string[] { "hot", "dot", "dog", "lot", "log", "cog" });
             // WordLadder_BFS_LessEfficient wlbfs = new WordLadder_BFS_LessEfficient();
             // wlbfs.FindLadders("hit","cog",new string[] { "hot", "dot", "dog", "lot", "log", "cog" });
             TrieDataStructure obj = new TrieDataStructure();
-            obj.InsertWord("spinclass");
+            // obj.InsertWord("spinclass");
             //bool exists = obj.Search("spin");
-            bool startsWith = obj.StartsWith("spin");
+          //   bool startsWith = obj.StartsWith("spin");
 
             //int nodes = 3;
             List<List<int>> graph = new List<List<int>>();

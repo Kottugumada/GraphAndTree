@@ -22,7 +22,7 @@ namespace Graphs.Heaps.Trees.Graphs.Maze
                 }
             }
 
-            var count = queue.Count == 0 ? 0 : -1; // set count to -1 because queue may have been preloaded with already rotted apples (or oranges)
+            var count = queue.Count == 0 ? 0 : -1; // set count to -1 because queue may have been preloaded with already rotten apples (or oranges)
 
             while (queue.Count > 0)
             {
