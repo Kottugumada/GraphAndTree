@@ -9,4 +9,8 @@
     <Compile Remove="Graphs\StronglyConnectedComponents\Routers2.cs" />
     <Compile Remove="Trees\TreeDFS.cs" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Graphs\Backtracking\" />
+  </ItemGroup>
 </Project>

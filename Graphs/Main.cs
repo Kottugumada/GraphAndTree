@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Graphs.Heaps.Trees.Graphs;
 using Graphs.Heaps.Trees.Graphs.Islands;
 using Graphs.Heaps.Trees.Graphs.StronglyConnectedComponents;
 using Graphs.Heaps.Trees.Graphs.Topological_Sort;
@@ -10,7 +9,6 @@ using Graphs.Heaps.Trees.Graphs.Word_Ladder;
 using Graphs.Heaps.Trees.Heaps;
 using Graphs.Heaps.Trees.Trees.BST.Traversal.LevelOrder;
 using Graphs.Heaps.Trees.Trees.Spanning_Tree;
-using static Graphs.Heaps.Trees.Graphs.Trie.SearchSuggestions;
 
 namespace DataStructures
 {
@@ -18,6 +16,14 @@ namespace DataStructures
     {
         public static void Main(string[] args)
         {
+            WordDictionary wd = new WordDictionary();
+            wd.AddWord("bad");
+            wd.AddWord("dad");
+            wd.AddWord("mad");
+            Console.Write(wd.Search("pad"));
+            Console.Write(wd.Search("bad"));
+            Console.Write(wd.Search(".ad"));
+            Console.Write(wd.Search("b.."));
             KClosedToOrigin kC = new KClosedToOrigin();
             //int[][] points = new int[2][];
             //points[0] = new int[] { 1, 0 };

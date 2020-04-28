@@ -41,9 +41,9 @@ public class Solution_Codec {
         for(int p=0;p<elements.Length;p++){
             int value;
             if(elements[p] == "null"){
-               res[p] = Int16.MaxValue;     
+               res[p] = int.MaxValue;     
             }
-            else if(Int32.TryParse(elements[p], out value))
+            else if(int.TryParse(elements[p], out value))
             {
                 res[p] = value;
             }
@@ -58,12 +58,12 @@ public class Solution_Codec {
         TreeNode root = new TreeNode(mid);
         if(root.left != null){
         root.left = ConvertSortedArrayToBST(nums,l,mid-1);
-        if(root.left.val == Int16.MaxValue){
+        if(root.left.val == int.MaxValue){
             root.left = null;
         }}
         if(root.right != null){
         root.right = ConvertSortedArrayToBST(nums,mid,r);
-        if(root.right.val == Int16.MaxValue){
+        if(root.right.val == int.MaxValue){
             root.right = null;
         }
         }
