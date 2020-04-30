@@ -12,7 +12,7 @@ outEdgeCount = 0 // cannot be an articulation point if it does not have more tha
 ids = [0,0...0,0]                           # length n
 lowLink = [0,0...0,0]                       # length n
 visited = [false, false... false, false]    # length n
-isArt = [false, false... false, false]		# length n
+isArt = [false, false... false, false]	    # length n
 
 function findArtPoints(){
     bridges = []
