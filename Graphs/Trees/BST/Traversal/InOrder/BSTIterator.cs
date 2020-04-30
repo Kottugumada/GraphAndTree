@@ -26,7 +26,7 @@ namespace BST
     public int Next() {
         int val = 0;
         while(st.Any() || curr != null){
-            if(this.curr != null){
+            if(curr != null){
                 st.Push(curr);
                 curr = curr.left;
             }

@@ -13,8 +13,13 @@ using System.Collections.Generic;
 namespace BST
 {
     public class Solution_IsValidBST {
-    public bool IsValidBST(TreeNode root) {
-   Stack<TreeNode> st = new Stack<TreeNode>();
+        /// <summary>
+        /// https://leetcode.com/problems/validate-binary-search-tree/
+        /// </summary>
+        /// <param name="root"></param>
+        /// <returns></returns>
+        public bool IsValidBST(TreeNode root) {
+        Stack<TreeNode> st = new Stack<TreeNode>();
         TreeNode curr = root;
         TreeNode prev = null;
         while (curr != null || st.Count > 0)
@@ -32,7 +37,6 @@ namespace BST
                 curr = curr.right;
             }
         }
-        
         return true;
     }
 }

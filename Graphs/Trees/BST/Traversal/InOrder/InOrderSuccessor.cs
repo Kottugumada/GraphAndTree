@@ -12,7 +12,13 @@ using System.Collections.Generic;
 namespace BST
 {
     public class Solution_InorderSuccessor {
-    public TreeNode InorderSuccessor(TreeNode root, TreeNode p) {
+        /// <summary>
+        /// https://leetcode.com/problems/inorder-successor-in-bst/
+        /// </summary>
+        /// <param name="root"></param>
+        /// <param name="p"></param>
+        /// <returns></returns>
+        public TreeNode InorderSuccessor(TreeNode root, TreeNode p) {
         Stack<TreeNode> st = new Stack<TreeNode>();
         TreeNode pre = null;
         if(root == null) return null;

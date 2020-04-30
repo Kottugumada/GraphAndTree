@@ -15,7 +15,13 @@ using System.Collections.Generic;
 namespace BST
 {
     public class Solution_KthSmallest {
-    public int KthSmallest(TreeNode root, int k) {
+        /// <summary>
+        /// https://leetcode.com/problems/kth-smallest-element-in-a-bst/
+        /// </summary>
+        /// <param name="root"></param>
+        /// <param name="k"></param>
+        /// <returns></returns>
+        public int KthSmallest(TreeNode root, int k) {
         int count = 0;
         if(root == null) return count;
 
@@ -27,11 +33,12 @@ namespace BST
             }
             else{
                 root = st.Pop();
-                if(++count == k) return root.val;
+                count++;
+                if(count == k) return root.val;
                 root = root.right;
             }
         }
-        return Int32.MinValue;
+        return int.MinValue;
     }
 }
 }
