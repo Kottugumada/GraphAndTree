@@ -50,14 +50,14 @@ namespace Backtracking
             return found;
         }
 
-    char[][] board;
-    /// <summary>
+        char[][] board;
+        /// <summary>
     /// https://leetcode.com/problems/word-search-ii/
     /// </summary>
     /// <param name="board"></param>
     /// <param name="words"></param>
     /// <returns></returns>
-    public IList<string> FindWords(char[][] board, string[] words)
+        public IList<string> FindWords(char[][] board, string[] words)
     {
         IList<string> res = new List<string>();
         // step 1 Construct the trie
@@ -110,17 +110,17 @@ namespace Backtracking
             }
 
             // mark the current letter before exploration
-            this.board[row][col] = '#';
+            board[row][col] = '#';
 
             // explore neighbor cells in around-clock directions: up, right, down, left
-            int[] rowOffset = { -1, 0, 1, 0 };
-            int[] colOffset = { 0, 1, 0, -1 };
+            int[] dr = { -1, 0, 1, 0 };
+            int[] dc = { 0, 1, 0, -1 };
             for (int i = 0; i < 4; ++i)
             {
-                int newRow = row + rowOffset[i];
-                int newCol = col + colOffset[i];
-                if (newRow < 0 || newRow >= this.board.Length || newCol < 0
-                    || newCol >= this.board[0].Length)
+                int newRow = row + dr[i];
+                int newCol = col + dc[i];
+                if (newRow < 0 || newRow >= board.Length || newCol < 0
+                    || newCol >= board[0].Length)
                 {
                     continue;
                 }
@@ -129,8 +129,6 @@ namespace Backtracking
                     Backtracking_WordSearch2(newRow, newCol, currNode, res);
                 }
             }
-
-
 
             // end of exploration, reset the previous word
             board[row][col] = letter;
