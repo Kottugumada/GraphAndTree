@@ -49,12 +49,8 @@ namespace Backtracking
             board[i][j] = temp; // retrieve the value
             return found;
         }
-    public class TrieNode
-    {
-        public Dictionary<char, TrieNode> children = new Dictionary<char, TrieNode>();
-        public string word = null;
-        public TrieNode() { }
-    }
+
+    char[][] board;
     /// <summary>
     /// https://leetcode.com/problems/word-search-ii/
     /// </summary>
@@ -86,7 +82,7 @@ namespace Backtracking
             // store the word in the trie
             node.word = word;
         }
-
+            this.board = board;
             // step 2. Backtracking for each cell in the board
             for (int row = 0; row < board.Length; row++)
             {
@@ -94,14 +90,14 @@ namespace Backtracking
                 {
                     if (root.children.ContainsKey(board[row][col]))
                     {
-                        Backtracking_WordSearch2(row,col,root, board,res);
+                        Backtracking_WordSearch2(row,col,root,res);
                     }
                 }
             }
             return res;
     }
 
-        private void Backtracking_WordSearch2(int row, int col, TrieNode parentNode, char[][] board, IList<string> res)
+        private void Backtracking_WordSearch2(int row, int col, TrieNode parentNode, IList<string> res)
         {
             char letter = board[row][col];
             TrieNode currNode = parentNode.children[letter];
@@ -114,18 +110,27 @@ namespace Backtracking
             }
 
             // mark the current letter before exploration
-            board[row][col] = '#';
-            if (row < 0 ||row >= board.Length || col < 0 || col >= board[row].Length)
+            this.board[row][col] = '#';
+
+            // explore neighbor cells in around-clock directions: up, right, down, left
+            int[] rowOffset = { -1, 0, 1, 0 };
+            int[] colOffset = { 0, 1, 0, -1 };
+            for (int i = 0; i < 4; ++i)
             {
-               // continue;
+                int newRow = row + rowOffset[i];
+                int newCol = col + colOffset[i];
+                if (newRow < 0 || newRow >= this.board.Length || newCol < 0
+                    || newCol >= this.board[0].Length)
+                {
+                    continue;
+                }
+                if (currNode.children.ContainsKey(board[newRow][newCol]))
+                {
+                    Backtracking_WordSearch2(newRow, newCol, currNode, res);
+                }
             }
-            if (currNode.children.ContainsKey(board[row][col]))
-            {
-                Backtracking_WordSearch2(row+1,col,parentNode,board,res);
-                Backtracking_WordSearch2(row-1, col, parentNode, board, res);
-                Backtracking_WordSearch2(row, col+1, parentNode, board, res);
-                Backtracking_WordSearch2(row, col-1, parentNode, board, res);
-            }
+
+
 
             // end of exploration, reset the previous word
             board[row][col] = letter;
@@ -136,5 +141,11 @@ namespace Backtracking
                 parentNode.children.Remove(letter);
             }
         }
+    }
+    public class TrieNode
+    {
+        public Dictionary<char, TrieNode> children = new Dictionary<char, TrieNode>();
+        public string word = null;
+        public TrieNode() { }
     }
 }
